@@ -30,8 +30,7 @@ Route::middleware(['auth', 'verified'])->group(function() {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::resource('chirps', ChirpController::class)
-        ->only(['index', 'store']);
+    Route::resource('chirps', ChirpController::class)->only(['index', 'store']);
 });
 
 require __DIR__.'/auth.php';
